@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AutoPrime - Sistema de Carros</title>
+</head>
+<body>
+    <h1>AutoPrime - Sistema de Gerenciamento de Carros</h1>
+    
+    <hr>
+    
+    <h2>1. Salvar Carro (saveCarro)</h2>
+    <form action="/saveCarro" method="POST">
+        <label>Modelo e Preço (ex: BMW,350000):</label><br>
+        <input type="text" name="modelo" placeholder="BMW,350000" required>
+        <button type="submit">Salvar</button>
+    </form>
+    
+    <hr>
+    
+    <h2>2. Consultar Preço (getCarro)</h2>
+    <form action="/getCarro" method="POST">
+        <label>Modelo:</label><br>
+        <input type="text" name="modelo" placeholder="BMW" required>
+        <button type="submit">Consultar</button>
+    </form>
+    
+    <hr>
+    
+    <h2>3. Atualizar Carro (updateCarro)</h2>
+    <form action="/updateCarro" method="POST">
+        <label>Modelo e Novo Preço (ex: BMW,375000):</label><br>
+        <input type="text" name="modelo" placeholder="BMW,375000" required>
+        <button type="submit">Atualizar</button>
+    </form>
+    
+    <hr>
+    
+    <h2>4. Deletar Carro (deleteCarro)</h2>
+    <form action="/deleteCarro" method="POST">
+        <label>Modelo:</label><br>
+        <input type="text" name="modelo" placeholder="BMW" required>
+        <button type="submit">Deletar</button>
+    </form>
+    
+    <hr>
+    
+    <h2>5. Listar Todos os Carros (listarCarros)</h2>
+    <form action="/listarCarros" method="POST">
+        <button type="submit">Listar Todos</button>
+    </form>
+    
+    <hr>
+    
+    <h3>Instruções:</h3>
+    <ul>
+        <li>Para salvar: informe "modelo,preço" (ex: BMW,350000)</li>
+        <li>Para consultar: informe apenas o modelo (ex: BMW)</li>
+        <li>Para atualizar: informe "modelo,novo_preço" (ex: BMW,375000)</li>
+        <li>Para deletar: informe apenas o modelo (ex: BMW)</li>
+        <li>Para listar: apenas clique no botão</li>
+    </ul>
+    
+    <p><strong>Nota:</strong> Os endpoints retornam JSON. Para testar via ferramentas como Postman ou curl, use:</p>
+    <ul>
+        <li>POST http://localhost:8080/getCarro - body: modelo=BMW</li>
+        <li>POST http://localhost:8080/saveCarro - body: modelo=BMW,350000</li>
+        <li>POST http://localhost:8080/deleteCarro - body: modelo=BMW</li>
+        <li>POST http://localhost:8080/updateCarro - body: modelo=BMW,375000</li>
+        <li>POST http://localhost:8080/listarCarros - sem body</li>
+    </ul>
+</body>
+</html>
